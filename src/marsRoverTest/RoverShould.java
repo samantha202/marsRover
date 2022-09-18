@@ -33,4 +33,13 @@ class RoverShould {
 			rover.StepForward();
 			assertEquals(3, rover.getY());
 	}
+	
+	@Test
+	void Move() {
+			
+			Rover rover = new Rover("3 3 E", new Plateau(5,5));
+			rover.Move("MMRMMRMRRM");
+			assertEquals("5 1 E", rover.getX() +" "+rover.getY() +" "+rover.getDirection());
+			
+	}
 }

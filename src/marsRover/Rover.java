@@ -83,6 +83,28 @@ public class Rover {
 				throw new RuntimeException("Unable to stepForward the direction value is not good");
 		}
    } 
+	
+	 public void Move(String roverCommand) {
+		   
+		  char[] instructions = roverCommand.toCharArray();
+		  //loop through array for each letter, call SpinLeft, SpinRight, StepForward
+		  for(int i = 0; i < instructions.length; i++) {
+			  
+			  switch(instructions[i]) {
+				case 'L':
+					this.SpinLeft();
+					break;
+				case 'R':
+					this.SpinRight();
+					break;
+				case 'M':
+					this.StepForward();
+					break;
+				default:
+					throw new RuntimeException("Unable to move instruction value is not good");
+			}
+		 }
+	 }
 
 	public int getX() {
 		return x;
