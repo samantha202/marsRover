@@ -17,4 +17,12 @@ class RoverShould {
 		rover.SpinLeft();
 		assertEquals("W", rover.getDirection());// testing instruction to verified if test pass or not	
 	}
+	
+	@Test
+	void SpinRight() {
+		  //assertTrue(false);
+		    Rover rover = new Rover("1 2 N", new Plateau(5,5));
+			rover.SpinRight();
+			assertEquals("E", rover.getDirection());
+	}
 }

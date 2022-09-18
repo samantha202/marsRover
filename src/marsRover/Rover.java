@@ -38,6 +38,27 @@ public class Rover {
 				throw new RuntimeException("Unable to rotate the direction value is not good");	
 		}
 	}
+	
+	public void SpinRight() {
+			
+		switch(this.direction) {
+			
+			case "N":
+				this.direction = "E";
+				break;
+			case "E":
+				this.direction = "S";
+				break;
+			case "S":
+				this.direction = "W";
+				break;
+			case "W":
+				this.direction = "N";
+				break;
+			default:
+				throw new RuntimeException("Unable to rotate the direction value is not good");	
+			}
+		}
 
 	public int getX() {
 		return x;
