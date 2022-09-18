@@ -1,6 +1,10 @@
 package marsRover;
 
-    //Rover : Position and location represented by (x, y, z), where Z in {N, E, W, S}
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+//Rover : Position and location represented by (x, y, z), where Z in {N, E, W, S}
 	//plateau: Grid of position following the format (x,y,z) where (0, 0, N) => (x=0, y=0, Z=N)
 	//	       MaximumCoordinates => (maxX, maxY) => (5 5)
 	// Message: (LLLRRMM)  => (L=SpinLeft, SpinRight, M=MovedForward)
@@ -18,9 +22,18 @@ package marsRover;
 	   
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) throws FileNotFoundException {
+	    
+		//get the text file passed as an argument
+	    Scanner reader = new Scanner(new FileInputStream(args[0]));
+	    while(reader.hasNext()) { //for each line of the file
+	    	
+	    	String position_rover = reader.nextLine(); //get a position of the rover
+	    	Rover rover = new Rover(position_rover, new Plateau(5,5));
+	    	
+	    	String instruction_rover = reader.nextLine();//get instruction of the rover
+			rover.Move(instruction_rover);
+			System.out.println(rover.getX() +" "+rover.getX() +" "+rover.getDirection());
+	    }
 	}
-
 }
