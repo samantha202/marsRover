@@ -59,6 +59,30 @@ public class Rover {
 				throw new RuntimeException("Unable to rotate the direction value is not good");	
 			}
 		}
+	
+	public void StepForward() {
+		
+		switch(this.direction) {
+			case "N":
+				if(y < this.plateau.upper_limit_y) 
+					y += 1;
+				break;
+			case "E":
+				if(x < this.plateau.upper_limit_x) 
+					x += 1;
+				break;
+			case "S":
+				if(y > this.plateau.lower_limit_y) 
+					y -= 1;
+				break;
+			case "W":
+				if(x > this.plateau.lower_limit_x) 
+					x -= 1;
+				break;
+			default:
+				throw new RuntimeException("Unable to stepForward the direction value is not good");
+		}
+   } 
 
 	public int getX() {
 		return x;

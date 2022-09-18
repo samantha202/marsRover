@@ -25,4 +25,12 @@ class RoverShould {
 			rover.SpinRight();
 			assertEquals("E", rover.getDirection());
 	}
+	
+	@Test
+	void StepForward() {
+			
+			Rover rover = new Rover("1 2 N", new Plateau(5,5));
+			rover.StepForward();
+			assertEquals(3, rover.getY());
+	}
 }
