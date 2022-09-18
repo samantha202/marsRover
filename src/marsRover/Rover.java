@@ -18,4 +18,56 @@ public class Rover {
 		 this.direction = arrOfLocation[2];
 		 this.plateau = plateau;
 	}
+	public void SpinLeft() {
+			
+		switch(this.direction) {
+			
+			case "N":
+				this.direction = "W";
+				break;
+			case "E":
+				this.direction = "N";
+				break;
+			case "S":
+				this.direction = "E";
+				break;
+			case "W":
+				this.direction = "S";
+				break;
+			default:
+				throw new RuntimeException("Unable to rotate the direction value is not good");	
+		}
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	public String getDirection() {
+		return direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+
+	public Plateau getPlateau() {
+		return plateau;
+	}
+
+	public void setPlateau(Plateau plateau) {
+		this.plateau = plateau;
+	}
 }
